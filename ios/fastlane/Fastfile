@@ -52,7 +52,7 @@ platform :ios do
           "com.dailypro.shooter" => "match AppStore com.dailypro.shooter"
         }
       },
-      xcargs: "-allowProvisioningUpdates CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=83C822A4J3 PROVISIONING_PROFILE_SPECIFIER='match AppStore com.dailypro.shooter'"
+      xcargs: "-allowProvisioningUpdates CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY='Apple Distribution' DEVELOPMENT_TEAM=83C822A4J3 PROVISIONING_PROFILE_SPECIFIER='match AppStore com.dailypro.shooter'"
     )
     
     # Upload to TestFlight
