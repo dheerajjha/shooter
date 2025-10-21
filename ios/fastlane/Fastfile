@@ -25,12 +25,20 @@ platform :ios do
     )
     
     # Sync code signing with match
-    match(
-      type: "appstore",
-      app_identifier: "com.dailypro.shooter",
-      readonly: is_ci,
-      git_basic_authorization: ENV["MATCH_GIT_BASIC_AUTHORIZATION"]
-    )
+    if is_ci
+      match(
+        type: "appstore",
+        app_identifier: "com.dailypro.shooter",
+        readonly: true,
+        git_url: "https://#{ENV['MATCH_GITHUB_TOKEN']}@github.com/dheerajjha/shooter-certificates.git"
+      )
+    else
+      match(
+        type: "appstore",
+        app_identifier: "com.dailypro.shooter",
+        readonly: false
+      )
+    end
     
     # Build the app
     build_app(
