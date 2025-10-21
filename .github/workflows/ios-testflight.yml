@@ -52,7 +52,7 @@ jobs:
       - name: Install CocoaPods dependencies
         run: |
           cd ios
-          bundle exec pod install --repo-update
+          pod install --repo-update
       
       - name: Clean Xcode build folder
         run: |
