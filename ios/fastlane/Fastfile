@@ -26,11 +26,13 @@ platform :ios do
     
     # Sync code signing with match
     if is_ci
+      token = ENV['MATCH_GITHUB_TOKEN']
+      git_url = "https://#{token}:x-oauth-basic@github.com/dheerajjha/shooter-certificates.git"
       match(
         type: "appstore",
         app_identifier: "com.dailypro.shooter",
         readonly: true,
-        git_url: "https://#{ENV['MATCH_GITHUB_TOKEN']}@github.com/dheerajjha/shooter-certificates.git"
+        git_url: git_url
       )
     else
       match(
