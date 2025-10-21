@@ -33,12 +33,12 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
           working-directory: ios
-      
+
       - name: Install Fastlane dependencies
         run: |
           cd ios
           bundle install
-      
+
       - name: Cache CocoaPods
         uses: actions/cache@v4
         with:
