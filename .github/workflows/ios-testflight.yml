@@ -39,6 +39,26 @@ jobs:
           cd ios
           bundle install
       
+      - name: Cache CocoaPods
+        uses: actions/cache@v4
+        with:
+          path: |
+            ios/Pods
+            ~/Library/Caches/CocoaPods
+          key: ${{ runner.os }}-pods-${{ hashFiles('ios/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      
+      - name: Install CocoaPods dependencies
+        run: |
+          cd ios
+          bundle exec pod install --repo-update
+      
+      - name: Clean Xcode build folder
+        run: |
+          cd ios
+          xcodebuild clean -workspace Runner.xcworkspace -scheme Runner -configuration Release
+      
       - name: Configure App Store Connect API Key
         env:
           APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_CONTENT }}
