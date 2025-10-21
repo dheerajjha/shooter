@@ -31,25 +31,21 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.code,
-              size: 80,
-              color: Colors.deepPurple,
-            ),
+            Icon(Icons.code, size: 80, color: Colors.deepPurple),
             const SizedBox(height: 24),
             Text(
               'You are a developer',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple.shade900,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: Colors.deepPurple.shade900,
+              ),
             ),
             const SizedBox(height: 16),
             Text(
               'and you are a gem 💎',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: Colors.deepPurple.shade700,
-                  ),
+                color: Colors.deepPurple.shade700,
+              ),
             ),
           ],
         ),
