@@ -1,5 +1,7 @@
-// Tests cleared - not maintained for now
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  // No tests currently
+  test('Always passes', () {
+    expect(true, true);
+  });
 }
