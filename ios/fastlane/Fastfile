@@ -51,7 +51,8 @@ platform :ios do
         provisioningProfiles: {
           "com.dailypro.shooter" => "match AppStore com.dailypro.shooter"
         }
-      }
+      },
+      xcargs: "-allowProvisioningUpdates CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=83C822A4J3"
     )
     
     # Upload to TestFlight
